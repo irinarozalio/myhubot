@@ -212,3 +212,11 @@ Add the subdomain hubot should connect to. If you web URL looks like
 
 You may want to get comfortable with `heroku logs` and `heroku restart` if
 you're having issues.
+
+## Docker Image
+    % docker build -t mybot .
+
+## Docker Run:
+    % docker run --rm -it --name=mybot -p 8080:8080 -e HUBOT_SLACK_TOKEN=<SLACK_API> -e EXTERNAL_SCRIPTS=hubot-grafana,hubot-help,hubot-pugme -e HUBOT_HEROKU_KEEPALIVE_URL=http://localhost:8080/ -e HUBOT_GRAFANA_API_KEY=<API_KEY_GRAFANA> -e HUBOT_GRAFANA_HOST=http://<host>:3000 -e HUBOT_LOG_LEVEL=debug mybot --adapter slack
+
+
